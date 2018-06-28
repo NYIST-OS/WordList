@@ -15,8 +15,9 @@ class Ex_CET:
     def __init__(self, path, cet_4_filename, cet_6_filename):
         lines = self.read(path)
         self.classify(lines)
-        self.write(self.cet_4_word_list, cet_4_filename)
-        self.write(self.cet_6_word_list, cet_6_filename)
+        
+        self.write(sorted(list(set(self.cet_4_word_list))), cet_4_filename)
+        self.write(sorted(list(set(self.cet_6_word_list))), cet_6_filename)
 
     def read(self, path):
         lines = []
